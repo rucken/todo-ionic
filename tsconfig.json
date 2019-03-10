@@ -15,10 +15,10 @@
     ],
     "paths": {
       "@rucken/todo-ionic": [
-        "libs/rucken/todo-ionic/src"
+        "dist/rucken/todo-ionic"
       ],
       "@rucken/todo-ionic/*": [
-        "libs/rucken/todo-ionic/src/*"
+        "dist/rucken/todo-ionic/*"
       ]
     }
   }
