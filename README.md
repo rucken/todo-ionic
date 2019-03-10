@@ -37,7 +37,7 @@ MIT
 [travis-url]: https://travis-ci.org/rucken/todo-ionic
 [gitter-image]: https://img.shields.io/gitter/room/rucken/todo-ionic.js.svg
 [gitter-url]: https://gitter.im/rucken/todo-ionic
-[npm-image]: https://badge.fury.io/js/%40rucken%2Fionic.svg
+[npm-image]: https://badge.fury.io/js/%40rucken%2Ftodo-ionic.svg
 [npm-url]: https://npmjs.org/package/@rucken/todo-ionic
 [dependencies-image]: https://david-dm.org/rucken/todo-ionic/status.svg
 [dependencies-url]: https://david-dm.org/rucken/todo-ionic
