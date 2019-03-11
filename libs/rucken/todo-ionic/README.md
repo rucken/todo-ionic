@@ -17,7 +17,7 @@ npm run start:prod
 
 ## Demo
 
-[https://rucken.github.io/todo-ionic/](https://rucken.github.io/ionic/) - Static site on [GitHub Pages](https://pages.github.com/)
+[https://rucken.github.io/todo-ionic/](https://rucken.github.io/todo-ionic/) - Static site on [GitHub Pages](https://pages.github.com/)
 
 [rucken-todo-ionic.apk](https://rucken.github.io/todo-ionic/assets/apk/rucken-todo-ionic.apk) - Mobile application for android
 
