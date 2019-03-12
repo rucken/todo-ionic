@@ -192,7 +192,7 @@
         }
       }
     },
-    "@rucken/todo-ionic": {
+    "todo-ionic": {
       "root": "libs/rucken/todo-ionic",
       "sourceRoot": "libs/rucken/todo-ionic/src",
       "projectType": "library",
