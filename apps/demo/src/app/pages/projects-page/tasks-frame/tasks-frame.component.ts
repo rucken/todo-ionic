@@ -6,6 +6,7 @@ import { BindIoInner } from 'ngx-bind-io';
 import { DynamicRepository, IRestProviderOptions, Repository } from 'ngx-repository';
 import { Observable } from 'rxjs';
 import { concatMap, map } from 'rxjs/operators';
+import { environment } from 'apps/demo/src/environments/environment';
 
 @BindIoInner()
 @Component({
@@ -14,6 +15,7 @@ import { concatMap, map } from 'rxjs/operators';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class TasksFrameComponent {
+  apiUrl = environment.apiUrl;
   title$: Observable<string>;
   id$: Observable<number>;
   project$: Observable<CustomProject>;
@@ -30,6 +32,7 @@ export class TasksFrameComponent {
     );
     this._repository = this._dynamicRepository.fork<CustomProject>(CustomProject);
     this._repository.useRest({
+      apiUrl: this.apiUrl,
       ...this._projectsConfig,
       autoload: false
     });

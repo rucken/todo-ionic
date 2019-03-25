@@ -70,6 +70,12 @@ msgstr ""
 msgid "Tasks filters"
 msgstr ""
 
+msgid "Russian"
+msgstr ""
+
+msgid "English"
+msgstr ""
+
 msgid "OK"
 msgstr ""
 

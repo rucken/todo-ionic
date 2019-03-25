@@ -65,6 +65,7 @@ export class ProjectsListComponent extends BaseEntityListComponent<CustomProject
   ngOnInit() {
     if (!this.mockedItems) {
       this.useRest({
+        apiUrl: this.apiUrl,
         infinity: true,
         ...this.projectsConfig,
         autoload: false

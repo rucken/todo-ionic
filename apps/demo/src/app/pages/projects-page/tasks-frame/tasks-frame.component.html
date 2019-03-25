@@ -24,6 +24,7 @@
 </ion-header>
 <ion-content>
     <tasks-list
+        [apiUrl]="apiUrl"
         [readonly]="!(project$|async|userPerm)"
         [project]="project$|async"
         #taskList>

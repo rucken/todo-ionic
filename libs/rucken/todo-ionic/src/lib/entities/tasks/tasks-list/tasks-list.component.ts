@@ -61,6 +61,7 @@ export class TasksListComponent extends BaseEntityListComponent<CustomTask> impl
   ngOnInit() {
     if (!this.mockedItems) {
       this.useRest({
+        apiUrl: this.apiUrl,
         infinity: true,
         ...this.tasksConfig,
         autoload: false

@@ -1,3 +1,4 @@
+export * from './app.browser.module';
 export * from './app.component';
 export * from './app.module';
 export * from './app.routes';
@@ -22,5 +23,6 @@ export * from './pages/projects-page/tasks-frame/tasks-frame.routes';
 export * from './pages/users-page/users-page.component';
 export * from './pages/users-page/users-page.module';
 export * from './pages/users-page/users-page.routes';
+export * from './shared/shared.module';
 export * from './utils/initialize-app';
 export * from './utils/meta-factory';

@@ -78,6 +78,12 @@ msgstr "Задачи"
 msgid "Tasks filters"
 msgstr "Фильтры задач"
 
+msgid "Russian"
+msgstr "Русский"
+
+msgid "English"
+msgstr "Английский"
+
 msgid "OK"
 msgstr "Ок"
 
