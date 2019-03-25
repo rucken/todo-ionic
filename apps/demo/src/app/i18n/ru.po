@@ -30,9 +30,6 @@ msgstr "Мобильное приложение \"Задачи\" с админк
 msgid "Russian"
 msgstr "Русский"
 
-msgid "English"
-msgstr "Английский"
-
 msgid "Demo users:"
 msgstr "Демо пользователи:"
 
@@ -89,6 +86,9 @@ msgstr "Пользователи"
 
 msgid "Search"
 msgstr "Поиск"
+
+msgid "English"
+msgstr "Английский"
 
 msgid "user with admin group: admin@admin.com, password: 12345678"
 msgstr "Администратор: admin@admin.com<br/>Пароль: 12345678"

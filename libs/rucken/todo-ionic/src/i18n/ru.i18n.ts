@@ -21,6 +21,8 @@ export const RuI18n = {
   'Close date': 'Дата закрытия',
   Tasks: 'Задачи',
   'Tasks filters': 'Фильтры задач',
+  Russian: 'Русский',
+  English: 'Английский',
   OK: 'Ок',
   Cancel: 'Отмена',
   'Assigned user': 'Пользователь',

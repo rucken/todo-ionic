@@ -1,18 +1,16 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
-import { IonicModule } from '@ionic/angular';
-import { TranslateModule } from '@ngx-translate/core';
+import { ProjectsListModule } from '@rucken/todo-ionic';
+import { SharedModule } from '../../shared/shared.module';
 import { ProjectsPageComponent } from './projects-page.component';
 import { PROJECTS_PAGE_ROUTES } from './projects-page.routes';
-import { ProjectsListModule } from '@rucken/todo-ionic';
 
 @NgModule({
   imports: [
     CommonModule,
-    IonicModule,
+    SharedModule,
     ProjectsListModule,
-    TranslateModule.forChild(),
     RouterModule.forChild(PROJECTS_PAGE_ROUTES)
   ],
   declarations: [ProjectsPageComponent]

@@ -1,7 +1,4 @@
-import { RuI18n as CoreRuI18n, translate } from '@rucken/core';
-import { RuI18n as IonicRuI18n } from '@rucken/ionic';
-import { RuI18n as TodoCoreRuI18n } from '@rucken/todo-core';
-import { RuI18n as TodoIonicRuI18n } from '@rucken/todo-ionic';
+import { translate } from '@rucken/core';
 import { RuI18n } from '../i18n/ru.i18n';
 import { ICoreConfig } from './config.interface';
 
@@ -14,12 +11,7 @@ export const config: ICoreConfig = {
             {
                 title: translate('Russian'),
                 code: 'ru',
-                translations: [IonicRuI18n, CoreRuI18n, TodoCoreRuI18n, TodoIonicRuI18n, RuI18n]
-            },
-            {
-                title: translate('English'),
-                code: 'en',
-                translations: []
+                translations: [RuI18n]
             }
         ]
     },

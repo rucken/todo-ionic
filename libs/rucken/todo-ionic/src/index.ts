@@ -1,4 +1,6 @@
 export * from './i18n/ru.i18n';
+export * from './lib/todo-ionic.module';
+export * from './lib/config/providers';
 export * from './lib/config/tasks.config';
 export * from './lib/entities/projects/project-modal/project-modal.component';
 export * from './lib/entities/projects/project-modal/project-modal.module';
