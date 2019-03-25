@@ -62,6 +62,9 @@
                                 id="xs-modules-links"
                             >
                                 <li class="link">
+                                    <a href="../modules/AppBrowserModule.html" >AppBrowserModule</a>
+                                </li>
+                                <li class="link">
                                     <a href="../modules/AppModule.html" >AppModule</a>
                                 </li>
                                 <li class="link">
@@ -75,6 +78,9 @@
                                 </li>
                                 <li class="link">
                                     <a href="../modules/ProjectsPageModule.html" >ProjectsPageModule</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../modules/SharedModule.html" >SharedModule</a>
                                 </li>
                                 <li class="link">
                                     <a href="../modules/TasksFrameModule.html" >TasksFrameModule</a>
@@ -212,6 +218,9 @@
                                        id="modules-links"
                    >
                                        <li class="link">
+                                           <a href="../modules/AppBrowserModule.html" >AppBrowserModule</a>
+                                       </li>
+                                       <li class="link">
                                            <a href="../modules/AppModule.html" >AppModule</a>
                                        </li>
                                        <li class="link">
@@ -225,6 +234,9 @@
                                        </li>
                                        <li class="link">
                                            <a href="../modules/ProjectsPageModule.html" >ProjectsPageModule</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../modules/SharedModule.html" >SharedModule</a>
                                        </li>
                                        <li class="link">
                                            <a href="../modules/TasksFrameModule.html" >TasksFrameModule</a>
@@ -434,6 +446,21 @@
                 <tbody>
                     <tr>
                         <td class="col-md-4">
+                            <b> apiUrl</b>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <code>apiUrl:     <code>any</code>
+    </bcode>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <table class="table table-sm table-bordered">
+                <tbody>
+                    <tr>
+                        <td class="col-md-4">
                             <b> id$</b>
                         </td>
                     </tr>
@@ -486,6 +513,7 @@ import { BindIoInner } from &#x27;ngx-bind-io&#x27;;
 import { DynamicRepository, IRestProviderOptions, Repository } from &#x27;ngx-repository&#x27;;
 import { Observable } from &#x27;rxjs&#x27;;
 import { concatMap, map } from &#x27;rxjs/operators&#x27;;
+import { environment } from &#x27;apps/demo/src/environments/environment&#x27;;
 
 @BindIoInner()
 @Component({
@@ -494,6 +522,7 @@ import { concatMap, map } from &#x27;rxjs/operators&#x27;;
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class TasksFrameComponent {
+  apiUrl &#x3D; environment.apiUrl;
   title$: Observable&lt;string&gt;;
   id$: Observable&lt;number&gt;;
   project$: Observable&lt;CustomProject&gt;;
@@ -510,6 +539,7 @@ export class TasksFrameComponent {
     );
     this._repository &#x3D; this._dynamicRepository.fork&lt;CustomProject&gt;(CustomProject);
     this._repository.useRest({
+      apiUrl: this.apiUrl,
       ...this._projectsConfig,
       autoload: false
     });

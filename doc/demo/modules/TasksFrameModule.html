@@ -62,6 +62,9 @@
                                 id="xs-modules-links"
                             >
                                 <li class="link">
+                                    <a href="../modules/AppBrowserModule.html" >AppBrowserModule</a>
+                                </li>
+                                <li class="link">
                                     <a href="../modules/AppModule.html" >AppModule</a>
                                 </li>
                                 <li class="link">
@@ -75,6 +78,9 @@
                                 </li>
                                 <li class="link">
                                     <a href="../modules/ProjectsPageModule.html" >ProjectsPageModule</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../modules/SharedModule.html" >SharedModule</a>
                                 </li>
                                 <li class="link">
                                     <a href="../modules/TasksFrameModule.html"  class="active" >TasksFrameModule</a>
@@ -212,6 +218,9 @@
                                        id="modules-links"
                    >
                                        <li class="link">
+                                           <a href="../modules/AppBrowserModule.html" >AppBrowserModule</a>
+                                       </li>
+                                       <li class="link">
                                            <a href="../modules/AppModule.html" >AppModule</a>
                                        </li>
                                        <li class="link">
@@ -225,6 +234,9 @@
                                        </li>
                                        <li class="link">
                                            <a href="../modules/ProjectsPageModule.html" >ProjectsPageModule</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../modules/SharedModule.html" >SharedModule</a>
                                        </li>
                                        <li class="link">
                                            <a href="../modules/TasksFrameModule.html"  class="active" >TasksFrameModule</a>
@@ -364,6 +376,14 @@
                             </li>
                     </ul>
                 </div>
+                <div class="col-sm-3">
+                    <h3>Imports<a href="https://angular.io/docs/ts/latest/api/core/index/NgModule-interface.html#!#imports-anchor" target="_blank"><span class="fa fa-info-circle"></a></h3>
+                    <ul class="list-group">
+                            <li class="list-group-item">
+                                    <a href="../modules/SharedModule.html" >SharedModule</a>
+                            </li>
+                    </ul>
+                </div>
             </div>
         </div>
     </div>
@@ -371,20 +391,16 @@
         <pre><code class="hljs javascript">import { CommonModule } from &#x27;@angular/common&#x27;;
 import { NgModule } from &#x27;@angular/core&#x27;;
 import { RouterModule } from &#x27;@angular/router&#x27;;
-import { IonicModule } from &#x27;@ionic/angular&#x27;;
-import { TranslateModule } from &#x27;@ngx-translate/core&#x27;;
+import { TasksListModule } from &#x27;@rucken/todo-ionic&#x27;;
+import { SharedModule } from &#x27;../../../shared/shared.module&#x27;;
 import { TasksFrameComponent } from &#x27;./tasks-frame.component&#x27;;
 import { TASKS_FRAME_ROUTES } from &#x27;./tasks-frame.routes&#x27;;
-import { TasksListModule } from &#x27;@rucken/todo-ionic&#x27;;
-import { PipesModule } from &#x27;@rucken/core&#x27;;
 
 @NgModule({
   imports: [
     CommonModule,
-    IonicModule,
-    PipesModule,
+    SharedModule,
     TasksListModule,
-    TranslateModule.forChild(),
     RouterModule.forChild(TASKS_FRAME_ROUTES)
   ],
   declarations: [TasksFrameComponent]
