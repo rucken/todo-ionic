@@ -1,6 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
-import { APP_INITIALIZER, NgModule } from '@angular/core';
+import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { PreloadAllModules, RouteReuseStrategy, RouterModule } from '@angular/router';
 import { SplashScreen } from '@ionic-native/splash-screen/ngx';
@@ -9,19 +9,18 @@ import { IonicModule, IonicRouteStrategy } from '@ionic/angular';
 import { IonicStorageModule } from '@ionic/storage';
 import { MetaLoader, MetaModule } from '@ngx-meta/core';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
-import { AccountModule, AuthModalModule, AuthModule, BrowserStorage, CONTENT_TYPES_CONFIG_TOKEN, DEFAULT_CONTENT_TYPES_CONFIG, DEFAULT_GROUPS_CONFIG, DEFAULT_PERMISSIONS_CONFIG, ErrorsExtractor, GROUPS_CONFIG_TOKEN, LangModule, LangService, PermissionsGuard, PERMISSIONS_CONFIG_TOKEN, RuckenCoreModule, STORAGE_CONFIG_TOKEN, TokenService, TransferHttpCacheModule, USERS_CONFIG_TOKEN } from '@rucken/core';
-import { GroupsListFiltersModalModule, GroupsListFiltersModalService, IONIC_DEFAULT_USERS_CONFIG, RuckenIonicModule, UsersListFiltersModalModule, UsersListFiltersModalService } from '@rucken/ionic';
+import { AccountModule, AuthModalModule, AuthModule, CONTENT_TYPES_CONFIG_TOKEN, DEFAULT_CONTENT_TYPES_CONFIG, DEFAULT_GROUPS_CONFIG, DEFAULT_PERMISSIONS_CONFIG, GROUPS_CONFIG_TOKEN, LangModule, PERMISSIONS_CONFIG_TOKEN, RuckenCoreModule, TransferHttpCacheModule, USERS_CONFIG_TOKEN } from '@rucken/core';
+import { GroupsListFiltersModalModule, IONIC_DEFAULT_USERS_CONFIG, RuckenIonicModule, UsersListFiltersModalModule } from '@rucken/ionic';
 import { DEFAULT_PROJECTS_CONFIG, PROJECTS_CONFIG_TOKEN, RuckenTodoCoreModule, TASKS_CONFIG_TOKEN } from '@rucken/todo-core';
 import { IONIC_DEFAULT_TASKS_CONFIG, ProjectsListFiltersModalModule, RuckenTodoIonicModule, TasksListFiltersModalModule } from '@rucken/todo-ionic';
 import { NgxBindIOModule } from 'ngx-bind-io';
-import { CookieService } from 'ngx-cookie-service';
 import { NgxPermissionsModule } from 'ngx-permissions';
+import { NgxRemoteConfigModule } from 'ngx-remote-config';
 import { environment } from '../environments/environment';
 import { AppComponent } from './app.component';
 import { APP_ROUTES } from './app.routes';
 import { config } from './config/config';
 import { SharedModule } from './shared/shared.module';
-import { initializeApp } from './utils/initialize-app';
 import { metaFactory } from './utils/meta-factory';
 @NgModule({
   declarations: [AppComponent],
@@ -30,6 +29,10 @@ import { metaFactory } from './utils/meta-factory';
     CommonModule,
     SharedModule,
     HttpClientModule,
+    NgxRemoteConfigModule.forRoot({
+      withoutIterceptor: !environment.production,
+      url: environment.remoteConfig
+    }),
     IonicStorageModule.forRoot(),
     TranslateModule.forRoot(),
     BrowserModule.withServerTransition({ appId: 'demo-todo' }),

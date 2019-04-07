@@ -3,4 +3,5 @@ export interface IEnvironment {
     type: 'prod' | 'development';
     production: boolean;
     apiUrl: string;
+    remoteConfig?: string;
 }
