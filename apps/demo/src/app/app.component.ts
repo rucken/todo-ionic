@@ -6,9 +6,8 @@ import { AlertController, Platform } from '@ionic/angular';
 import { AlertInput } from '@ionic/core';
 import { MetaService } from '@ngx-meta/core';
 import { TranslateService } from '@ngx-translate/core';
-import { AuthModalComponent, AuthModalService, AuthService, ILanguagesItem, LangService, RedirectUrlDto, TokenService, User, UserTokenDto } from '@rucken/core';
+import { AuthModalComponent, AuthModalService, AuthService, ILanguagesItem, LangService, ModalsService, RedirectUrlDto, TokenService, User, UserTokenDto } from '@rucken/core';
 import { GroupsService, NavbarComponent, PermissionsService } from '@rucken/ionic';
-import { ModalsService } from '@rucken/core';
 import { BindIoInner } from 'ngx-bind-io';
 import { Observable, Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
@@ -53,44 +52,43 @@ export class AppComponent implements OnInit, OnDestroy {
     this.languages$ = this._langService.languages$;
     this.currentLang$ = this._langService.current$;
     this.currentUser$ = this._authService.current$;
-
-    this._platform.ready().then(() => {
-      this.currentLang$
-        .pipe(takeUntil(this._destroyed$))
-        .subscribe(lang => {
-          this._metaService.setTag(
-            'og:locale',
-            lang.toLowerCase() + '-' + lang.toUpperCase()
-          );
-          this.title = this._translateService.instant(
-            this._metaService.loader.settings.applicationName
-          );
-        });
-      this.currentUser$
-        .pipe(takeUntil(this._destroyed$))
-        .subscribe(user => {
-          if (user) {
-            if (user.permissionNames.includes('read_group')) {
-              this._groupsService.repository.reloadAll();
-            }
-            if (user.permissionNames.includes('read_permission')) {
-              this._permissionsService.repository.reloadAll();
-            }
+    this.currentLang$
+      .pipe(takeUntil(this._destroyed$))
+      .subscribe(lang => {
+        if (lang) {
+          this._metaService.setTag('og:locale', lang.toLowerCase() + '-' + lang.toUpperCase());
+          this.title = this._translateService.instant(this._metaService.loader.settings.applicationName);
+        }
+      });
+    this.currentUser$
+      .pipe(takeUntil(this._destroyed$))
+      .subscribe(user => {
+        if (user) {
+          if (user.permissionNames.includes('read_group')) {
+            this._groupsService.repository.reloadAll();
           }
-        });
-      if (isPlatformBrowser(this._platformId)) {
-        this._tokenService.tokenHasExpired$.pipe(takeUntil(this._destroyed$)).subscribe(result => {
+          if (user.permissionNames.includes('read_permission')) {
+            this._permissionsService.repository.reloadAll();
+          }
+        }
+      });
+    if (isPlatformBrowser(this._platformId)) {
+      this._tokenService.tokenHasExpired$.pipe(takeUntil(this._destroyed$)).subscribe(result => {
+        if (result === true) {
           if (isPlatformBrowser(this._platformId)) {
             this._authModalService.onTokenError();
           } else {
             this._authModalService.onSignOutSuccess(undefined);
           }
-        });
-      }
+        }
+      });
+    }
+    this._platform.ready().then(() => {
       this._statusBar.styleDefault();
       this._splashScreen.hide();
     });
   }
+
   ngOnInit() {
     this._authModalService.onInfo();
     this.navbar.setRoutes(APP_ROUTES);

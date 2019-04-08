@@ -34,7 +34,8 @@ import { NgxRemoteConfigIonicService } from './utils/ngx-remote-config.service';
     HttpClientModule,
     NgxRemoteConfigModule.forRoot({
       withoutIterceptor: !environment.production,
-      url: environment.remoteConfig
+      url: environment.remoteConfig.url,
+      default: environment.remoteConfig.default
     }),
     IonicStorageModule.forRoot(),
     TranslateModule.forRoot(),

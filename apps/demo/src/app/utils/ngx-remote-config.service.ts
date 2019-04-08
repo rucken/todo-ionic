@@ -18,23 +18,24 @@ export class NgxRemoteConfigIonicService<T = any> extends NgxRemoteConfigService
         );
     }
     initConfigAsync() {
-        if (this.platform.is('android') || this.platform.is('ios')) {
+        if (this.platform.is('cordova')) {
             return new Promise(resolve =>
                 this.http.disableRedirect(false).then(result =>
                     this.http.get(this.options.url, {}, {}).then(
                         response => {
-                            let config;
+                            let config: T;
                             try {
                                 config = JSON.parse(response.data);
                             } catch (error) {
                                 config = response.data;
                             }
-                            this.config$.next(config);
+                            this.config$.next(config || {});
                             resolve(config);
                         },
                         response => {
-                            this.config$.next({});
-                            resolve({});
+                            const config: T = this.options.default || {};
+                            this.config$.next(config);
+                            resolve(config);
                         }
                     )
                 )

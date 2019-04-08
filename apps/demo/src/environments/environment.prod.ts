@@ -5,5 +5,10 @@ export const environment: IEnvironment = {
   type: 'prod',
   production: true,
   apiUrl: '/api',
-  remoteConfig: 'https://testapi.io/api/EndyKaufman/rucken-todo-ionic.json'
+  remoteConfig: {
+    url: 'https://testapi.io/api/EndyKaufman/rucken-todo-ionic.json',
+    default: {
+      '/api/(.*)': 'https://todo-nestjs.rucken.io/api/'
+    }
+  }
 };
