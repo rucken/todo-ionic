@@ -913,10 +913,12 @@ export class AppComponent implements OnInit, OnDestroy {
         });
       if (isPlatformBrowser(this._platformId)) {
         this._tokenService.tokenHasExpired$.pipe(takeUntil(this._destroyed$)).subscribe(result &#x3D;&gt; {
-          if (isPlatformBrowser(this._platformId)) {
-            this._authModalService.onTokenError();
-          } else {
-            this._authModalService.onSignOutSuccess(undefined);
+          if (result &#x3D;&#x3D;&#x3D; true) {
+            if (isPlatformBrowser(this._platformId)) {
+              this._authModalService.onTokenError();
+            } else {
+              this._authModalService.onSignOutSuccess(undefined);
+            }
           }
         });
       }
