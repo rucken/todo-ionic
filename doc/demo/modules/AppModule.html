@@ -440,7 +440,7 @@ import { IonicModule, IonicRouteStrategy } from &#x27;@ionic/angular&#x27;;
 import { IonicStorageModule } from &#x27;@ionic/storage&#x27;;
 import { MetaLoader, MetaModule } from &#x27;@ngx-meta/core&#x27;;
 import { TranslateModule, TranslateService } from &#x27;@ngx-translate/core&#x27;;
-import { AccountModule, AuthModalModule, AuthModule, CONTENT_TYPES_CONFIG_TOKEN, DEFAULT_CONTENT_TYPES_CONFIG, DEFAULT_GROUPS_CONFIG, DEFAULT_PERMISSIONS_CONFIG, GROUPS_CONFIG_TOKEN, LangModule, PERMISSIONS_CONFIG_TOKEN, RuckenCoreModule, TransferHttpCacheModule, USERS_CONFIG_TOKEN } from &#x27;@rucken/core&#x27;;
+import { AccountModule, AuthModalModule, AuthModule, CONTENT_TYPES_CONFIG_TOKEN, DEFAULT_CONTENT_TYPES_CONFIG, DEFAULT_GROUPS_CONFIG, DEFAULT_PERMISSIONS_CONFIG, GROUPS_CONFIG_TOKEN, LangModule, PERMISSIONS_CONFIG_TOKEN, RuckenCoreModule, TransferHttpCacheModule, USERS_CONFIG_TOKEN, JWT_CONFIG_TOKEN, DEFAULT_JWT_CONFIG } from &#x27;@rucken/core&#x27;;
 import { GroupsListFiltersModalModule, IONIC_DEFAULT_USERS_CONFIG, RuckenIonicModule, UsersListFiltersModalModule } from &#x27;@rucken/ionic&#x27;;
 import { DEFAULT_PROJECTS_CONFIG, PROJECTS_CONFIG_TOKEN, RuckenTodoCoreModule, TASKS_CONFIG_TOKEN } from &#x27;@rucken/todo-core&#x27;;
 import { IONIC_DEFAULT_TASKS_CONFIG, ProjectsListFiltersModalModule, RuckenTodoIonicModule, TasksListFiltersModalModule } from &#x27;@rucken/todo-ionic&#x27;;
@@ -518,6 +518,13 @@ import { NgxRemoteConfigIonicService } from &#x27;./utils/ngx-remote-config.serv
     RuckenTodoIonicModule
   ],
   providers: [
+    {
+      provide: JWT_CONFIG_TOKEN,
+      useValue: {
+        ...DEFAULT_JWT_CONFIG,
+        withoutTokenUrls: [&#x27;auth/&#x27;, environment.remoteConfig.url]
+      }
+    },
     HTTP,
     {
       provide: NgxRemoteConfigService,

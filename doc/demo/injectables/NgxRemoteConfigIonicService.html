@@ -463,7 +463,7 @@ export class NgxRemoteConfigIonicService&lt;T &#x3D; any&gt; extends NgxRemoteCo
                             } catch (error) {
                                 config &#x3D; response.data;
                             }
-                            this.config$.next(config);
+                            this.config$.next(config || {});
                             resolve(config);
                         },
                         response &#x3D;&gt; {
