@@ -434,17 +434,6 @@ import { initializeApp } from &#x27;./utils/initialize-app&#x27;;
     providers: [
         { provide: STORAGE_CONFIG_TOKEN, useClass: BrowserStorage },
         { provide: &#x27;ORIGIN_URL&#x27;, useValue: location.origin },
-        {
-            provide: APP_INITIALIZER,
-            useFactory: initializeApp,
-            multi: true,
-            deps: [
-                TokenService,
-                LangService,
-                UsersListFiltersModalService,
-                GroupsListFiltersModalService
-            ]
-        },
     ]
 })
 export class AppBrowserModule { }

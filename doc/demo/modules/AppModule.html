@@ -463,8 +463,10 @@ import { NgxRemoteConfigIonicService } from &#x27;./utils/ngx-remote-config.serv
     SharedModule,
     HttpClientModule,
     NgxRemoteConfigModule.forRoot({
+      withoutAppInitialize: true,
       withoutIterceptor: !environment.production,
-      url: environment.remoteConfig
+      url: environment.remoteConfig.url,
+      default: environment.remoteConfig.default
     }),
     IonicStorageModule.forRoot(),
     TranslateModule.forRoot(),

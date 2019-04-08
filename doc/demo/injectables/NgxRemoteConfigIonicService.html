@@ -457,7 +457,7 @@ export class NgxRemoteConfigIonicService&lt;T &#x3D; any&gt; extends NgxRemoteCo
                 this.http.disableRedirect(false).then(result &#x3D;&gt;
                     this.http.get(this.options.url, {}, {}).then(
                         response &#x3D;&gt; {
-                            let config;
+                            let config: T;
                             try {
                                 config &#x3D; JSON.parse(response.data);
                             } catch (error) {
@@ -467,8 +467,9 @@ export class NgxRemoteConfigIonicService&lt;T &#x3D; any&gt; extends NgxRemoteCo
                             resolve(config);
                         },
                         response &#x3D;&gt; {
-                            this.config$.next({});
-                            resolve({});
+                            const config: T &#x3D; this.options.default || {};
+                            this.config$.next(config);
+                            resolve(config);
                         }
                     )
                 )
