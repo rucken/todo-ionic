@@ -452,7 +452,7 @@ export class NgxRemoteConfigIonicService&lt;T &#x3D; any&gt; extends NgxRemoteCo
         );
     }
     initConfigAsync() {
-        if (this.platform.is(&#x27;android&#x27;) || this.platform.is(&#x27;ios&#x27;)) {
+        if (this.platform.is(&#x27;cordova&#x27;)) {
             return new Promise(resolve &#x3D;&gt;
                 this.http.disableRedirect(false).then(result &#x3D;&gt;
                     this.http.get(this.options.url, {}, {}).then(
