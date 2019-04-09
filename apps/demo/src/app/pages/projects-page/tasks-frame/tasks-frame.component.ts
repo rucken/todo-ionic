@@ -6,7 +6,7 @@ import { BindIoInner } from 'ngx-bind-io';
 import { DynamicRepository, IRestProviderOptions, Repository } from 'ngx-repository';
 import { Observable } from 'rxjs';
 import { concatMap, map } from 'rxjs/operators';
-import { environment } from 'apps/demo/src/environments/environment';
+import { environment } from '../../../../environments/environment';
 
 @BindIoInner()
 @Component({
