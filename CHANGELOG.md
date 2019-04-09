@@ -1,3 +1,12 @@
+## [0.0.4](https://github.com/rucken/todo-ionic/compare/0.0.3...0.0.4) (2019-04-09)
+
+
+### Bug Fixes
+
+* Update dependencies ([d8efb80](https://github.com/rucken/todo-ionic/commit/d8efb80))
+
+
+
 ## [0.0.3](https://github.com/rucken/todo-ionic/compare/0.0.2...0.0.3) (2019-03-25)
 
 
