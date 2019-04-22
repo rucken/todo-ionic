@@ -1,9 +1,9 @@
 #!/bin/bash
 # NODEJS_VERSION="11"
 IONIC_VERSION="4.10.2"
-ARG ANDROID_SDK_VERSION="4333796"
-ARG ANDROID_HOME="/opt/android-sdk"
-ARG ANDROID_BUILD_TOOLS_VERSION="26.1.1"
+ANDROID_SDK_VERSION="4333796"
+ANDROID_HOME="/opt/android-sdk"
+ANDROID_BUILD_TOOLS_VERSION="26.1.1"
 
 # 1) Install system package dependencies
 # 2) Install Nodejs/NPM/Ionic-Cli
