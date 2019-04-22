@@ -21,17 +21,17 @@ curl
 unzip
 git
 gradle
-# curl -sL https://deb.nodesource.com/setup_${NODEJS_VERSION}.x | bash - \
+# curl -sL https://deb.nodesource.com/setup_$NODEJS_VERSION.x | bash - \
 apt-get update
 apt-get install -y nodejs
-npm install -g cordova ionic@${IONIC_VERSION}
+npm install -g cordova ionic@$IONIC_VERSION
 cd /tmp
-curl -fSLk https://dl.google.com/android/repository/sdk-tools-linux-${ANDROID_SDK_VERSION}.zip -o sdk-tools-linux-${ANDROID_SDK_VERSION}.zip
-unzip sdk-tools-linux-${ANDROID_SDK_VERSION}.zip
+curl -fSLk https://dl.google.com/android/repository/sdk-tools-linux-$ANDROID_SDK_VERSION.zip -o sdk-tools-linux-$ANDROID_SDK_VERSION.zip
+unzip sdk-tools-linux-$ANDROID_SDK_VERSION.zip
 mkdir /opt/android-sdk
 mv tools /opt/android-sdk
 (while sleep 3; do echo "y"; done) | $ANDROID_HOME/tools/bin/sdkmanager --licenses
 $ANDROID_HOME/tools/bin/sdkmanager "platform-tools"
-$ANDROID_HOME/tools/bin/sdkmanager "build-tools;${ANDROID_BUILD_TOOLS_VERSION}"
+$ANDROID_HOME/tools/bin/sdkmanager "build-tools;$ANDROID_BUILD_TOOLS_VERSION"
 apt-get autoremove -y
-rm -rf /tmp/sdk-tools-linux-${ANDROID_SDK_VERSION}.zip
+rm -rf /tmp/sdk-tools-linux-$ANDROID_SDK_VERSION.zip
