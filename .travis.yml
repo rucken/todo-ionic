@@ -2,7 +2,7 @@ language: node_js
 node_js:
   - "11"
 env:
-  - IONIC_VERSION="4.10.2" ANDROID_SDK_VERSION="4333796" ANDROID_HOME="/opt/android-sdk" ANDROID_BUILD_TOOLS_VERSION="26.1.1" CORDOVA_ANDROID_GRADLE_DISTRIBUTION_URL="https://services.gradle.org/distributions/gradle-2.2.1-all.zip"
+  - IONIC_VERSION="4.10.2" ANDROID_SDK_VERSION="4333796" ANDROID_HOME="/opt/android-sdk" ANDROID_BUILD_TOOLS_VERSION="26.1.1" CORDOVA_ANDROID_GRADLE_DISTRIBUTION_URL="https://services.gradle.org/distributions/gradle-4.1-all.zip"
 before_install:
   - chmod +x "./scripts/prepare-android-env.sh"
   - "./scripts/prepare-android-env.sh"
