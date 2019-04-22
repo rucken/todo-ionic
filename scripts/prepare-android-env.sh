@@ -15,6 +15,7 @@
 apt-get update
 apt-get install -y
 build-essential
+
 openjdk-8-jre
 openjdk-8-jdk
 curl
@@ -26,6 +27,13 @@ apt-get update
 apt-get install -y nodejs
 npm install -g cordova ionic@$IONIC_VERSION
 cd /tmp
+
+wget https://services.gradle.org/distributions/gradle-2.2.1-all.zip
+unzip gradle-2.2.1-all.zip
+ln -s gradle-2.2.1 gradle
+rm gradle-2.2.1-all.zip
+gradle
+
 curl -fSLk https://dl.google.com/android/repository/sdk-tools-linux-$ANDROID_SDK_VERSION.zip -o sdk-tools-linux-$ANDROID_SDK_VERSION.zip
 unzip sdk-tools-linux-$ANDROID_SDK_VERSION.zip
 mkdir /opt/android-sdk
