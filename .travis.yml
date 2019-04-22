@@ -7,6 +7,11 @@ before_install:
   - chmod +x "./scripts/prepare-android-env.sh"
   - "./scripts/prepare-android-env.sh"
 after_success:
+  - wget https://services.gradle.org/distributions/gradle-2.2.1-all.zip
+  - unzip gradle-2.2.1-all.zip
+  - ln -s gradle-2.2.1 gradle
+  - rm gradle-2.2.1-all.zip
+  - gradle
   - export GRADLE_HOME=/usr/bin/gradle
   - export PATH=$PATH:$GRADLE_HOME/bin
   - "npm run android"
