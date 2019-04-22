@@ -11,6 +11,7 @@ before_install:
   - ln -s gradle-2.2.1 gradle
   - rm gradle-2.2.1-all.zip
   - gradle
+  - export CORDOVA_ANDROID_GRADLE_DISTRIBUTION_URL=https://services.gradle.org/distributions/gradle-2.2.1-all.zip
   - export GRADLE_HOME=/usr/bin/gradle
   - export PATH=$PATH:$GRADLE_HOME/bin
   - chmod +x "./scripts/prepare-android-env.sh"
