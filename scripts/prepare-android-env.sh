@@ -33,6 +33,7 @@ unzip sdk-tools-linux-$ANDROID_SDK_VERSION.zip
 mkdir /opt/android-sdk
 mv tools /opt/android-sdk
 (while sleep 3; do echo "y"; done) | $ANDROID_HOME/tools/bin/sdkmanager --licenses
+
 $ANDROID_HOME/tools/bin/sdkmanager "platform-tools"
 $ANDROID_HOME/tools/bin/sdkmanager "build-tools;$ANDROID_BUILD_TOOLS_VERSION"
 apt-get autoremove -y
