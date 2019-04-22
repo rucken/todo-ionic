@@ -7,4 +7,6 @@ before_install:
   - chmod +x "./scripts/prepare-android-env.sh"
   - "./scripts/prepare-android-env.sh"
 after_success:
+  - export GRADLE_HOME=/usr/bin/gradle
+  - export PATH=$PATH:$GRADLE_HOME/bin
   - "npm run android"
