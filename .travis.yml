@@ -12,6 +12,6 @@ before_install:
   - "./scripts/prepare-android-env.sh"
 deploy:
   provider: script
-  script: bash ../scripts/publish-gh-pages
+  script: bash ./scripts/publish-gh-pages
   on:
     branch: develop
