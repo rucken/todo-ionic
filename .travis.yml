@@ -13,4 +13,4 @@ before_install:
 deploy:
   provider: "./scripts/publish-gh-pages"
   on:
-    branch: master
+    branch: develop
