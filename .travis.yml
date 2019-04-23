@@ -6,5 +6,7 @@ env:
 before_install:
   - chmod +x "./scripts/prepare-android-env.sh"
   - "./scripts/prepare-android-env.sh"
-after_success:
-  - "npm run android"
+deploy:
+  provider: ./scripts/publish-gh-pages
+  on:
+    branch: master
