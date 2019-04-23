@@ -6,6 +6,7 @@ before_install:
   - "./scripts/prepare-android-env.sh"
 deploy:
   provider: script
+  skip_cleanup: true
   script: bash ./scripts/publish-gh-pages
   on:
     branch: develop
