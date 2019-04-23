@@ -9,7 +9,7 @@ deploy:
   skip_cleanup: true
   script: bash ./scripts/publish-gh-pages.sh
   on:
-    branch: develop
+    branch: master
 env:
   matrix:
   - IONIC_VERSION="4.10.2" ANDROID_SDK_VERSION="4333796" ANDROID_HOME="/opt/android-sdk"
