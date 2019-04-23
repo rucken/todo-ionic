@@ -7,7 +7,7 @@ before_install:
 deploy:
   provider: script
   skip_cleanup: true
-  script: bash ./scripts/publish-gh-pages
+  script: bash ./scripts/publish-gh-pages.sh
   on:
     branch: develop
 env:
