@@ -8,9 +8,10 @@ env:
   global:
     secure: kd1+5RILSr/B1/ytYdTBUE0n9LBuTXcXelttkQrvmEpupquCnmBYZ0Gu0rAPRuWsLTxJPhVX0HGPBNq/eTn0RZO0/505w//SoKQvTnQhwvfA4ECnJMWbGgk911M72BBnVNRXfWWMAGP79a0I0YvI3kDh5LhITJENXXfqd3NoWpKLVeNg4umfL2CykXyYowVxZu1ES4WU+vhLJOczZrmOFgvvUQQpUvBF8Yq8V3LgVs1Sc2jbD4Wj9XNUWQHalCXNAGvTOpchhV/MAGNbSmUEh98d5hlMRtagdclwCUvGI5scR14qt1JnIExri/2LyDO4IR2LYuPsu0pTAb332+tJizSmwJ5RNCWQILneHT0VInEKoxRUJICjH0EnbFjP4yHQDTN5RoFXhwdKZkKIzPvfzJTuTEp3Ftr/1DdMbBR3OLBgv0kknDGRpFUH5Ld+/LQdd17k3BxbmCSOFUujoNif1LEZR/tI2R4EgBlDSsHpHIQAZ4gumYsL3mxGTlYAm4sce6+zz9FHLtMgPG8iXBt3108c8um7ebO7ELYD31y+BFpFHLJiFfAprYFpLwQdk4CfRU2tjVJXvbWp3MqiIURU/NuLOfwa8RRGzH9a916YjA4M9dO70Ny3KhhVmxBUCF0kBmcoYMOa6X/IEJTY82/FeNmayiJf1b2fgsG3MJK/Sh0=
 before_install:
-- chmod +x "./scripts/prepare-android-env.sh"
-- "./scripts/prepare-android-env.sh"
+  - chmod +x "./scripts/prepare-android-env.sh"
+  - "./scripts/prepare-android-env.sh"
 deploy:
-  provider: bash ./scripts/publish-gh-pages
+  provider: script
+  script: bash ../scripts/publish-gh-pages
   on:
     branch: develop
