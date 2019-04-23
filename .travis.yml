@@ -11,6 +11,6 @@ before_install:
 - chmod +x "./scripts/prepare-android-env.sh"
 - "./scripts/prepare-android-env.sh"
 deploy:
-  provider: "./scripts/publish-gh-pages"
+  provider: bash ./scripts/publish-gh-pages
   on:
     branch: develop
