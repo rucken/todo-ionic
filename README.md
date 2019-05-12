@@ -6,7 +6,14 @@
 [![Gitter][gitter-image]][gitter-url]
 [![Join the chat at telegram][telegram-image]][telegram-url]
 
-Admin UI for Ionic4 with Angular7+ mobile todo application based on [Rucken](https://github.com/rucken) template
+Admin UI for Ionic4 with Angular7+ mobile todo application based on [Rucken](https://rucken.io) template
+
+## Screenshots
+<p>
+  <img src="https://rucken.io/assets/rucken-todo/ionic/rucken-todo-ionic-home-page.png" width="250" title="Ionic: Home page">
+  <img src="https://rucken.io/assets/rucken-todo/ionic/rucken-todo-ionic-projects-add-modal.png" width="250" title="Ionic: Modal for add project">
+  <img src="https://rucken.io/assets/rucken-todo/ionic/rucken-todo-ionic-filter-modal-for-tasks-of-project.png" width="250" title="Ionic: Filter modal for tasks">
+</p>
 
 ## Usage
 
