@@ -6,13 +6,13 @@
 [![Gitter][gitter-image]][gitter-url]
 [![Join the chat at telegram][telegram-image]][telegram-url]
 
-Admin UI for [Ionic4](https://ionicframework.com/) with [Angular7+](https://angular.io) mobile todo application based on [Rucken](https://rucken.io) template
+Admin UI for [Ionic4](https://ionicframework.com/) with [Angular7+](https://angular.io) mobile todo application based on [Rucken](https://rucken.ru) template
 
 ## Screenshots
 <p>
-  <img src="https://rucken.io/assets/rucken-todo/ionic/rucken-todo-ionic-home-page.png" width="250" title="Ionic: Home page">
-  <img src="https://rucken.io/assets/rucken-todo/ionic/rucken-todo-ionic-projects-add-modal.png" width="250" title="Ionic: Modal for add project">
-  <img src="https://rucken.io/assets/rucken-todo/ionic/rucken-todo-ionic-filter-modal-for-tasks-of-project.png" width="250" title="Ionic: Filter modal for tasks">
+  <img src="https://rucken.ru/assets/rucken-todo/ionic/rucken-todo-ionic-home-page.png" width="250" title="Ionic: Home page">
+  <img src="https://rucken.ru/assets/rucken-todo/ionic/rucken-todo-ionic-projects-add-modal.png" width="250" title="Ionic: Modal for add project">
+  <img src="https://rucken.ru/assets/rucken-todo/ionic/rucken-todo-ionic-filter-modal-for-tasks-of-project.png" width="250" title="Ionic: Filter modal for tasks">
 </p>
 
 ## Usage
